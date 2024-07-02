@@ -1,0 +1,27 @@
+shellEmulator: true
+
+trustPolicy: off
+
+# Fuck that shit, it's preventing ALL upgrades
+# trustPolicy: no-downgrade
+#
+# trustPolicyExclude:
+#  - vite@6.4.1
+
+packages:
+  - .
+
+onlyBuiltDependencies:
+  - agentdb
+  - agentic-flow
+  - argon2
+  - bcrypt
+  - better-sqlite3
+  - esbuild
+  - hnswlib-node
+  - nx
+  - onnxruntime-node
+  - protobufjs
+  - sharp
+  - sqlite3
+  - tldjs
