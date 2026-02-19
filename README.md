@@ -54,3 +54,12 @@ Changing from an SVG (relative or not) to a WEBP (relative or not) makes the bui
 +[build] 2 page(s) built in ##ms
 +[build] Complete!
 ```
+
+## Observations
+
+1. The SVG image gets copied into `dist/_astro/`, like the WEBP.
+2. Whenever the SVG image is used, the `getStaticPaths()` function (in `src/pages/[id]/index.astro`) is never invoked (if I log to the console first thing inside it, that log is never emitted).
+3. In `src/pages/[id]/index.astro`, if I don't use a top-level await and instead move the call to `getCollection()` inside of `getStaticPaths()`, the build works as expected.
+
+   > [!TIP]
+   > This suggest an Astro v6 regression related to top-level awaits.

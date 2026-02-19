@@ -1,11 +1,11 @@
 ---
-import type { GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
 
 export const allArticles = await getCollection('articles')
 
-export const getStaticPaths: GetStaticPaths =
-	() => allArticles.map(({id}) => ({ params: { id } }))
+export async function getStaticPaths() {
+	return allArticles.map(({id}) => ({ params: { id } }))
+}
 ---
 <!doctype html>
 <html lang="en">
