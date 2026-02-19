@@ -38,3 +38,19 @@ hero: './boy-reading.svg'
 ```
 
 Changing from an SVG (relative or not) to a WEBP (relative or not) makes the build work as expected, i.e. generate the HTML files for the two articles.
+
+```diff
+--- 1/build.svg.log
++++ 2/build.webp.log
+@@ -12,3 +12,10 @@
+ [build] Rearranging server assets...
+
+  generating static routes
++  ├─ /article-2/index.html (+##ms)
++  ├─ /article-1/index.html (+##ms)
++✓ Completed in ##ms.
++
++[build] ✓ Completed in ##ms.
++[build] 2 page(s) built in ##ms
++[build] Complete!
+```
