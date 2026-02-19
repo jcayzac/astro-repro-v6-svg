@@ -1,18 +1,15 @@
 ---
 import type { GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
-import type { CollectionEntry } from 'astro:content'
-
-import Layout from '/Article.astro'
 
 export const allArticles = await getCollection('articles')
 
 export const getStaticPaths: GetStaticPaths =
-	() => allArticles.map(entry => ({
-		params: { id: entry.id },
-		props: { entry },
-	}))
-
-const entry = Astro.props.entry as CollectionEntry<'articles'>
+	() => allArticles.map(({id}) => ({ params: { id } }))
 ---
-<Layout {entry} />
+<!doctype html>
+<html lang="en">
+	<body>
+		We don't even need to render the entry's content or access any prop for the build to give up.
+	</body>
+</html>

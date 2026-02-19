@@ -1,0 +1,4 @@
+title: Article 2
+# it works if commented out and the next one is used instead :(
+hero: './boy-reading.svg'
+# hero: './hero1.webp'
